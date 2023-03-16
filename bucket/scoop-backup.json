@@ -1,0 +1,20 @@
+{
+    "homepage": "https://github.com/KNOXDEV",
+    "description": "Additional backup functionality for the Scoop Package Manager",
+    "license": "Unlicense",
+    "version": "0.2022.07.27",
+    "url": "https://github.com/KNOXDEV/scoop-backup/archive/273c613464a2a22173482ba5408a43fdd6aa829a.zip",
+    "hash": "71981d369c642f58756995d4afc8bd10df567a0d10ae8ca2c5d786a6420ddd1f",
+    "extract_dir": "scoop-backup-273c613464a2a22173482ba5408a43fdd6aa829a",
+    "bin": "scoop-backup.ps1",
+    "persist": "backups",
+    "checkver": {
+        "url": "https://github.com/KNOXDEV/scoop-backup/commits/master.atom",
+        "re": "(?s)>(\\d+)-(\\d+)-(\\d+)T.*?/(?<sha>[0-9a-f]{40})",
+        "replace": "0.${1}.${2}.${3}"
+    },
+    "autoupdate": {
+        "url": "https://github.com/KNOXDEV/scoop-backup/archive/$matchSha.zip",
+        "extract_dir": "scoop-backup-$matchSha"
+    }
+}
